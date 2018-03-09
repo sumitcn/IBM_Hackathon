@@ -1,0 +1,240 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Generating Transcripts from Audio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+        body{
+            font-family: verdana;
+            font-size: 25px;
+
+            background-image: url("https://www.ibm.com/blogs/watson/wp-content/uploads/2017/04/B_card.png");
+        }
+        h2{
+            margin-top:25px;
+        }
+        #container1{ 
+            margin-top: 100px;
+            margin-bottom: 50px;
+        }
+
+        #text{
+            float: left;
+            margin-left: 340px;
+            color:white;
+        }
+        #tone{
+            float:right;
+            margin-right:340px;
+            color:white;
+        }
+        #text_content{
+            height: 150px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 0 5px 0 #bbb;
+            width: 500px;
+            float: left;
+            margin-left: 100px;
+            font-size: 14px;
+            line-height: 25px;
+            background-color: rgb(218, 218, 233);
+        }
+        #tone_content{
+            height: 150px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 0 5px 0 #bbb;
+            width:500px;
+            float:right;
+            margin-right:100px;
+            font-size: 14px;
+            line-height: 25px;
+            background-color: rgb(218, 218, 233);
+            }
+        p
+          {
+
+            color:white;
+
+          }
+        h2
+          {
+ 
+           color:white;              
+
+          }    
+        #clear {
+            clear: both;
+        }
+        #record{
+            font-size: 15px;   
+        }
+        #audio{
+            font-size: 15px;
+        }
+        div{
+            display: block;
+        }
+        </style>
+    </head>
+    <body>
+        <h2 id=2 align="center">Speech to Text Converter</h2>
+        <div id="container1">
+            <div id="text"><b>Text</b></div>
+            <div id="tone"><b>Tone</b></div>
+            <br><br>
+                <div id="text_content">
+                	
+
+
+
+{{ datr }}
+
+
+
+
+  
+                      
+                </div>
+                <div id="tone_content">
+                	
+
+                     <table>
+   
+
+    {% for key , value in dictio.items  %}
+       <tr><td> {{ key }}</td> 
+       <td>{{ value }}</td></tr>
+      
+
+    {% endfor %}
+        
+</table>
+
+
+
+
+
+
+
+                </div>
+
+
+
+                <div id="clear"></div>
+        </div>
+        <div id="container2">
+                <center>
+                     <form action = "/speech/record/" method = "post">
+    {% csrf_token %}
+    {{ form }}
+
+    <input type = "submit" value = "Start" />
+</form>
+
+   <div >
+  <p > Press the start button and say something , Wait for few seconds</p> 
+    </div>               
+                </center>
+        </div>
+
+    </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+<html>
+<head>
+	<style>
+   .boxed {
+  border: 1px solid green ;
+}
+
+</style>
+</head>
+
+
+
+
+
+
+<textarea rows="20" cols="40">
+
+
+{{ datr }}
+
+
+
+
+</textarea>
+
+
+<table>
+   
+
+    {% for key , value in dictio.items  %}
+       <td> {{ key }}</td>
+       <td>{{ value }}<br></td>
+      
+
+    {% endfor %}
+        
+</table>
+
+
+</html>
+
+-->
