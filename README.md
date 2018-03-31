@@ -16,4 +16,4 @@ Step 4:- Run the local server in your browser.
 
 
 
-![stack Overflow](http://lmsotfy.com/so.png)
+![stack Overflow](https://preview.ibb.co/nCsUfS/Screenshot_from_2018_03_09_22_42_06.png)
